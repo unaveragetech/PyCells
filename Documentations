@@ -1,0 +1,82 @@
+# PyCells 🧠💡
+
+![PyCells Logo](https://i.ibb.co/0JN3gT0/pngwing-com.png)
+
+Welcome to PyCells - your friendly, brainy Python companion! 🚀 PyCells is a Python script that brings together the magic of OpenAI's GPT-3.5 and the simplicity of Python for handling and nurturing your textual memories. 📚📝
+
+## What's the Buzz?
+
+In a nutshell, PyCells is your memory's best friend! It can do a bunch of cool stuff:
+
+1. **Store Memories**: PyCells helps you collect and store your precious thoughts and ideas. It's like having a personal journal but smarter! 📓
+
+2. **Summarize with Style**: Got lengthy content? PyCells taps into GPT-3.5's superpower to summarize it in a flash, making complex stuff simple! ✨
+
+3. **Retrieve with Ease**: Finding stuff is a breeze! PyCells neatly organizes your memories so you can fetch them in a snap. 🧐🗂️
+
+4. **Evolve Memories**: Ever thought about evolving your memories? With PyCells, you can! Your thoughts can grow into grand ideas. 🌱🌳
+
+5. **Learn & Expand**: PyCells loves to chat and learn. Ask it a question, and it'll tell you more about what you're curious about. 🤔🧠
+
+## How's the Magic Happening?
+
+Here's how PyCells works its charm:
+
+1. **Start the Show**: PyCells sets the stage by preparing its path and inviting OpenAI's GPT-3.5 to the party. 🎩🎉
+
+2. **Capture the Magic**: You drop your thoughts into PyCells, and it handles them like a pro! 🪄
+
+3. **Summon Summaries**: If your content's a bit wordy, PyCells gets GPT-3.5 to whip up a snappy summary. 📝✨
+
+4. **Memory Retrieval**: Need something you stored earlier? PyCells has your back; it'll fetch it for you! 🔍🧳
+
+5. **Let's Get Creative**: Feeling creative? Make your memories evolve! PyCells can turn basic thoughts into intricate ideas. 🌟🌠
+
+6. **Q&A Time**: Have a chat with PyCells, and it'll happily share its wisdom and insights. 🗣️🤓
+
+## The File Fiesta
+
+PyCells knows how to party with your memories! Here's how it keeps things tidy:
+
+- `memory_files/`: Your memories get cozy here - both in their original and summarized forms.
+- `memory_reference/`: Memories with a glow-up live here. PyCells helps them become fancier! ✨
+- `subconscious/`: This is where your raw thoughts chill, untouched and unfiltered.
+
+## Learning & Evolution 🧬
+
+PyCells isn't just about memories; it's about growth!
+
+- **Basic Memory**: The starting point, where your memory begins.
+- **Intermediate Thought**: A step up from basic, showing signs of growth.
+- **Advanced Thought**: The big league, where your thoughts become powerful and refined. 💪💡
+
+The time it takes to evolve depends on your input and the complexity of your ideas.
+
+## Get Started
+
+Ready to dive into the world of PyCells? Here's how:
+
+1. Set up your OpenAI API key in the `config.py` file or as an environment variable.
+2. Make sure the "memory" folders (`memory_files`, `memory_reference`, `subconscious`) exist.
+3. Fire up PyCells by creating an instance of the `MemorySystem` class.
+
+```python
+# Example Usage:
+from memory_system import MemorySystem
+
+# Initialize the Memory System
+memory_system = MemorySystem()
+
+# Store a Memory
+memory_system.store_memory("The Eiffel Tower is located in Paris.", "landmarks")
+
+# Retrieve a Memory
+retrieved_memories = memory_system.retrieve_memory("landmarks")
+print(retrieved_memories)
+
+# Evolve a Memory
+memory_system.evolve_memory("landmarks", "The Eiffel Tower is an iconic Parisian landmark.")
+
+# Learn Passively
+additional_info = memory_system.learn_passively("Tell me more about the Eiffel Tower.")
+print(additional_info)
