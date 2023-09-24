@@ -77,7 +77,7 @@ class MemorySystem:
 
 # Example usage:
 # memory_system = MemorySystem()
-# memory_system.store_memory("The Eiffel Tower is located in Paris.", "landmarks")
-# print(memory_system.retrieve_memory("landmarks"))
-# print(memory_system.learn_passively("Eiffel Tower"))
+# memory_system.store_memory("The Eiffel Tower is located in Paris.", "landmarks") -- Stores an associated contenet at a specified path 
+# print(memory_system.retrieve_memory("landmarks")) --- gets memory from path 
+# print(memory_system.learn_passively("Eiffel Tower")) --- learns information about memory
 
