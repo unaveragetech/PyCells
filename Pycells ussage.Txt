@@ -1,0 +1,21 @@
+# Example usage:
+
+# 1. Initialize the memory system.
+memory_system = MemorySystem()
+
+# 2. Store a new memory. The system will automatically generate hierarchical tags for the memory and store them.
+memory_system.store_memory("The Eiffel Tower is a landmark in Paris.")
+
+# 3. Store another memory for demonstration purposes.
+memory_system.store_memory("Bats are nocturnal mammals that can fly.")
+
+# 4. Retrieve memories based on a specific tag. This will return all memories associated with the given tag.
+landmark_memories = memory_system.retrieve_memory_by_tag("landmark")
+print("Memories related to 'landmark':", landmark_memories)
+
+mammal_memories = memory_system.retrieve_memory_by_tag("mammal")
+print("Memories related to 'mammal':", mammal_memories)
+
+# 5. If you want to see the hierarchical structure of tags (for demonstration purposes):
+print("Hierarchical Tag Structure:", memory_system.tagging_system.tag_hierarchy)
+
