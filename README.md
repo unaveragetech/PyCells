@@ -153,17 +153,55 @@ The GUI Debugger allows users to perform the same tasks as above, but through a 
 
 Below is a chart that illustrates the interactions between the different scripts:
 
-```mermaid
-graph TD;
-    User -->|Stores, Retrieves, Edits Memory| GUI[GUI Debugger (membranedebugger.py)];
-    GUI -->|Interacts with| Membrane[Memory Abstraction Layer (membrane.py)];
-    Membrane -->|Stores/Retrieves Memory| PyCells[File-Based Memory (PyCells.py)];
-    Membrane -->|Stores/Retrieves Memory| Pycells2[Database-Based Memory (Pycells2.py)];
+Interaction Diagram (Block Representation)
+sql
+Copy code
++---------------------------+
+|         User Input         |
+|  (Stores, Retrieves, Edits)|
++---------------------------+
+            |
+            v
++---------------------------+
+|   GUI Debugger (membranedebugger.py)  |
+|  (User interacts with the system)     |
++---------------------------+
+            |
+            v
++------------------------------------------+
+| Memory Abstraction Layer (membrane.py)   |
+| (Routes to appropriate memory storage)   |
++------------------------------------------+
+      /                    \
+     v                      v
++----------------+     +-----------------------+
+| File-Based     |     |  Database-Based       |
+| Memory System  |     |  Memory System        |
+| (PyCells.py)   |     |  (Pycells2.py)        |
++----------------+     +-----------------------+
+    |                       |
+    v                       v
++----------------+      +-----------------------+
+| File System    |      | SQLite Database        |
+| (Text Files)   |      | (Memory Records)       |
++----------------+      +-----------------------+
+```bash
+Explanation of Interaction Diagram
+User Input: The user performs actions such as storing, retrieving, or editing memories. This is the starting point for interaction with the memory management system.
 
-    PyCells -->|Stores Memories as Text Files| FileSystem[File System];
-    Pycells2 -->|Stores Memories as Database Records| SQLite[SQLite Database];
+GUI Debugger (membranedebugger.py): The user's input is processed through a graphical interface, allowing for easy interaction. The GUI serves as the bridge between the user and the memory systems.
+
+Memory Abstraction Layer (membrane.py): This script routes the user’s actions to the appropriate memory storage system. Whether the request is for file-based or database-based storage, this layer determines the correct backend to interact with.
+
+File-Based Memory System (PyCells.py): When a memory is stored or retrieved from text files, it goes through this system. The data is physically stored in the file system as text files.
+
+Database-Based Memory System (Pycells2.py): If the memory is associated with a tag and stored in a database, this system is used. The data is stored in an SQLite database, allowing for structured storage and retrieval.
+
+File System: This is the underlying storage mechanism for the file-based memory system. Memories are saved as text files on the disk.
+
+SQLite Database: This is the storage mechanism for the database-based system, where memories are stored in a structured database format.
 ```
-
+```bash
 ### Explanation of Diagram:
 
 - **User**: Initiates interactions with the memory system via the GUI debugger.
@@ -173,7 +211,7 @@ graph TD;
 - **Database-Based Memory (`Pycells2.py`)**: Stores and retrieves memory in an SQLite database.
 - **File System**: The storage location for file-based memories.
 - **SQLite Database**: The storage location for database-based memories.
-
+```
 ---
 
 ## Conclusion
