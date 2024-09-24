@@ -148,43 +148,23 @@ The GUI Debugger allows users to perform the same tasks as above, but through a 
 - Uploading multiple files in bulk for memory storage.
 
 ---
-
+```bash
 ## System Interaction Diagram
 
 Below is a chart that illustrates the interactions between the different scripts:
 
-Interaction Diagram (Block Representation)
-sql
-Copy code
-+---------------------------+
-|         User Input         |
-|  (Stores, Retrieves, Edits)|
-+---------------------------+
-            |
-            v
-+---------------------------+
-|   GUI Debugger (membranedebugger.py)  |
-|  (User interacts with the system)     |
-+---------------------------+
-            |
-            v
-+------------------------------------------+
-| Memory Abstraction Layer (membrane.py)   |
-| (Routes to appropriate memory storage)   |
-+------------------------------------------+
-      /                    \
-     v                      v
-+----------------+     +-----------------------+
-| File-Based     |     |  Database-Based       |
-| Memory System  |     |  Memory System        |
-| (PyCells.py)   |     |  (Pycells2.py)        |
-+----------------+     +-----------------------+
-    |                       |
-    v                       v
-+----------------+      +-----------------------+
-| File System    |      | SQLite Database        |
-| (Text Files)   |      | (Memory Records)       |
-+----------------+      +-----------------------+
+## System Interaction Chart
+
+| **Component**                         | **Description**                                       |
+|---------------------------------------|-------------------------------------------------------|
+| User Input                            | Stores, retrieves, and edits memory data.            |
+| GUI Debugger (membranedebugger.py)  | User interface for interacting with the memory system.|
+| Memory Abstraction Layer (membrane.py)| Routes requests to the appropriate memory storage.    |
+| File-Based Memory System (PyCells.py) | Handles memory storage using text files.              |
+| Database-Based Memory System (Pycells2.py) | Handles memory storage using a SQLite database.      |
+| File System                           | Stores memory as text files.                          |
+| SQLite Database                       | Stores memory records in a database format.          |
+```
 ```bash
 Explanation of Interaction Diagram
 User Input: The user performs actions such as storing, retrieving, or editing memories. This is the starting point for interaction with the memory management system.
