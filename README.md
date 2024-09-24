@@ -1,7 +1,3 @@
-Here’s a detailed document with code examples and an illustration of the interactions between the scripts in the memory management system. The example code snippets show how different parts of the system work, and the chart will visually depict how the different scripts interact with each other.
-
----
-
 # Memory Management System Documentation
 
 ## Overview
