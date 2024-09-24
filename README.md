@@ -148,7 +148,7 @@ The GUI Debugger allows users to perform the same tasks as above, but through a 
 - Uploading multiple files in bulk for memory storage.
 
 ---
-```bash
+
 ## System Interaction Diagram
 
 Below is a chart that illustrates the interactions between the different scripts:
@@ -164,7 +164,7 @@ Below is a chart that illustrates the interactions between the different scripts
 | Database-Based Memory System (Pycells2.py) | Handles memory storage using a SQLite database.      |
 | File System                           | Stores memory as text files.                          |
 | SQLite Database                       | Stores memory records in a database format.          |
-```
+
 ```bash
 Explanation of Interaction Diagram
 User Input: The user performs actions such as storing, retrieving, or editing memories. This is the starting point for interaction with the memory management system.
